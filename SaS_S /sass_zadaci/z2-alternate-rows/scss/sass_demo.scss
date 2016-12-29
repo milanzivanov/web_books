@@ -1,0 +1,71 @@
+$bodyBackground:		#193441;
+$containerBackground:	#3e606f;
+$mainTextColor:  		#d1dbbd;
+$orangeTextColor:		#fecb92;
+$centerMargin:			0 auto;
+$containerPadding:		2em;
+$mainSansFont:			Helvetica, Arial, sans-serif;
+$mainContainerWidth:	900px;
+
+
+
+@mixin odd_row() {
+	@for $i from 1 through 9 {
+		@if $i % 2 == 0 {
+			.row#{$i}{
+				background: $bodyBackground;
+			}
+		}@else {
+			.row#{$i} {
+				background: white;
+				color : black;
+			}
+		}
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background:  $bodyBackground;
+	font-family: $mainSansFont;
+	color: 		 $mainTextColor;
+
+	.mainContainer {
+		width: $mainContainerWidth;
+		height: 100%;
+		margin: $centerMargin;
+		background: $containerBackground;
+		text-align: justify;
+		padding: $containerPadding;
+	}
+
+	h1 {
+		margin-bottom: 0.2em;
+	}
+
+	h2 {
+		color: $orangeTextColor;
+		font-size: 1.2em;
+		margin-bottom: 3em;
+	}
+
+	table {
+		width: 50%;
+		margin: 0 auto;
+		text-align: center;
+
+		thead {
+			background: #000;
+		}
+
+		th, td {
+			border: 1px solid $mainTextColor;
+		}
+		@include odd_row();
+	}
+}

@@ -1,0 +1,47 @@
+$bodyBackground:		#193441;
+$containerBackground:	#3e606f;
+$mainTextColor:  		#d1dbbd;
+$orangeTextColor:		#fecb92;
+$centerMargin:			0 auto;
+$containerPadding:		2em;
+$mainSansFont:			Helvetica, Arial, sans-serif;
+$mainContainerWidth:	900px;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background:  $bodyBackground;
+	font-family: $mainSansFont;
+	color: 		 $mainTextColor;
+
+	.mainContainer {
+		width: $mainContainerWidth;
+		height: 100%;
+		margin: $centerMargin;
+		background: $containerBackground;
+		text-align: justify;
+
+		.leftSidebar {
+			float: left;
+			width: 300px / $mainContainerWidth * 100%;
+			height: 100%;
+			background: $mainTextColor;
+			padding: $containerPadding;
+		}
+
+		.rightSidebar {
+			float: right;
+			width: 600px / $mainContainerWidth * 100%;
+			height: 100%;
+			padding: $containerPadding;
+		}
+	}
+
+	h1 {
+		margin-bottom: 2em;
+	}
+}

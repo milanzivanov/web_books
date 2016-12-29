@@ -1,0 +1,51 @@
+html, body {
+  width: 100%;
+  height: 100%; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: #193441;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #d1dbbd; }
+  body .mainContainer {
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    background: #3e606f;
+    text-align: justify; }
+  body .leftSidebar {
+    float: left;
+    height: 100%;
+    width: 23.72479%;
+    padding: 2em; }
+  body .rightContent {
+    float: right;
+    width: 71.17438%;
+    padding: 2em; }
+    body .rightContent h1 {
+      margin-bottom: 0.2em; }
+    body .rightContent h2 {
+      color: #bac99c;
+      font-size: 1.2em;
+      margin-bottom: 3em; }
+    body .rightContent p {
+      width: 100%;
+      padding: 10px;
+      text-align: justify; }
+    body .rightContent a {
+      text-decoration: none; }
+    body .rightContent .p1 a {
+      background: #b7fa53;
+      color: #fff; }
+    body .rightContent .p2 a {
+      background: #c2a729;
+      color: #fff; }
+    body .rightContent .p3 a {
+      background: #fa8613;
+      color: #fff; }
+
+/*# sourceMappingURL=sass_demo.css.map */

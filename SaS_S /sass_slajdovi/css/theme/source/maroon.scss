@@ -1,0 +1,119 @@
+/*
+	MAROON
+	A dark-red theme for reveal.js presentations.
+	Milorad Filipovic 
+	milorad.filipovic19 [AT] gmail [DOT] com
+*/
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+// Override theme settings (see ../template/settings.scss)
+$mainFont: "Roboto Condensed",sans-serif;
+$mainColor: #f1efd8;
+$secondaryColor: #6a6a6a;
+$headingFont: "Roboto Condensed",sans-serif;
+$headingColor: #f1efd8;
+$headingTextShadow: none;
+$headingTextTransform: none;
+$backgroundColor: #491a1a;
+$linkColor: #6a6a6a;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: #26351C;
+
+$heading1Size: 3em;
+$heading2Size: 1.5em;
+$heading3Size: 1.2em;
+$heading4Size: 1em;
+
+.reveal a {
+  line-height: 1.3em;
+}
+
+.reveal {
+
+	h1, h2, h3 { text-transform: uppercase !important; }
+	h4 { color: $secondaryColor !important; }
+
+	.mainSubtitle { 
+		color: $mainColor !important; 
+		font-size: 1em; 
+		margin-top: -.3em; 
+	}
+
+	.dashes {
+		width: 100%;
+		height: 2px;
+		background: url('../../images/line.png') repeat-x;
+		margin: .2em 0; 
+	}
+
+	p { text-align: justify; }
+	ul { list-style: inside url('../../images/bullets/crown.png'); }
+	ul ul { list-style: inside url('../../images/bullets/fleur.png'); }
+	li { padding-left: 1.5em; text-indent: -1.6em; }
+	li pre { text-align: center; }
+
+	code {
+		color: $secondaryColor;
+		text-transform: none;
+	    margin: 0 .2em;
+		font-size: .9em;
+	}
+
+	pre { 
+		display: flex !important;
+
+		code { 
+			width: 100%; 
+			font-size: 1em; 
+			margin: 0;
+		}
+		code.plain { color: $mainColor !important;}
+	}
+
+	.litList { margin-top: .5em; }
+
+	.litSubtitle {
+		font-family: monospace;
+		color: $secondaryColor;
+		font-size: .7em;
+	}
+
+	.section_number {
+		float: right;
+		color: $mainColor !important;
+		font-size: .4em;
+		padding: 1.5em .5em 0 0;
+	}
+}
+
+.reveal .slides {
+	text-align: left;
+
+	h1 { 
+		margin-bottom: 0; 
+		font-weight: bold; 
+		line-height: 1em; 
+	}
+
+	h2, h3 {
+		color: $secondaryColor;
+		margin-bottom: 0;
+	}
+
+	.social {
+		font-size: .5em;
+
+		.social_icon { margin-right: .2em; }
+		.name { margin-left: .2em; }
+	}
+
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------

@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: #193441;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #d1dbbd; }
+
+h1 {
+  margin-bottom: 0.2em; }
+
+h2 {
+  color: #fecb92;
+  font-size: 1.2em;
+  margin-bottom: 3em; }
+
+.mainContainer {
+  width: 900px;
+  height: 100%;
+  margin: 0 auto;
+  background: #3e606f;
+  text-align: justify;
+  padding: 2em; }
+  .mainContainer div {
+    width: 150px;
+    height: 150px;
+    float: left;
+    margin-right: 50px;
+    background-size: cover; }
+  .mainContainer .image1 {
+    background-image: url("../slike/s1.png"); }
+  .mainContainer .image2 {
+    background-image: url("../slike/s2.png"); }
+  .mainContainer .image3 {
+    background-image: url("../slike/s3.png"); }
+  .mainContainer .image4 {
+    background-image: url("../slike/s4.png"); }
+
+/*# sourceMappingURL=sass_demo.css.map */

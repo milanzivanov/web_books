@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Front-End kurs::SASS</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">f
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/maroon.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/tomorow.css">
+
+		<!-- Roboto Condensed font -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+		<!-- Font Awesome CSS -->
+		<link rel="stylesheet" href="lib/font-awesome-4.4.0/css/font-awesome.min.css">
+
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+<!-- *************************************************************** SLIDES START HERE *********************************************************************************************** -->
+				
+				<section class="mainSlide center">
+					<h1>SASS</h1>
+					<h3  class="dashed">Front-End Development kurs 2015</h3>
+					<div class="social">
+						<a href="http://miloradfilipovic.github.io/" target="_blank">
+							<i class="fa fa-desktop social_icon"></i>
+						</a>
+						<a href="https://github.com/MiloradFilipovic" target="_blank">
+							<i class="fa fa-github social_icon"></i>
+						</a>
+						<a href="http://informatika.ftn.uns.ac.rs/MiloradFilipovic/" target="_blank">
+							<i class="fa fa-university social_icon"></i>
+						</a>
+						<span class="name">Milorad Filipović</span>
+					</div>
+				</section>
+
+				<section data-section="preprocessors">
+					<h2 class="dashed">CSS predprocesori</h2>
+					<ul>
+					    <li><i>Eng.</i> CSS preprocessors</li>
+					    <li>Uvode nove mogućnosti proširivanjem CSS jezika.</li>
+					    <li>Proširenja se uglavnom baziraju na nedostacima samog CSS-a i na dobrim praksama i mehanizmima iz programskih jezika i objektno-orijentisanog programiranja.</li>
+					    <li>Kreirani sa ciljem da olakšaju kreiranje CSS sadržaja kako bi se održala organizovanost i lakoća održavanja koda bez obzira na veličinu projekta.</li>
+					</ul>
+				</section>
+
+				<section data-section="preprocessors">
+					<h2 class="dashed">CSS predprocesori</h2>
+					<ul>
+					    <li>Predstavnici: LESS, Sass, Stylus, Switch CSS, …</li>
+					    <li>Svaki od njih uglavnom omogućava sličan skup mogućnosti, ali sa različitim sintaksama.</li>
+					    <li>S obzirom da browseri direktno ne podržavaju ni jedan od CSS predprocesora, kod napisan po pravilima predprocesora se prevodi u čisti CSS kod.</li>
+					    <li>Uglavnom su svi unazad kompatibilni sa čistim CSS-om.</li>
+					    <li>U većini slučajeva se izbor svodi na <b>LESS</b> ili <b>Sass</b>.</li>
+					</ul>
+				</section>
+
+				<section data-section="less">
+					<h2 class="dashed">LESS.js</h2>
+					<ul>
+					    <li><a href="http://lesscss.org/">lesscss.org</a></li>
+					    <li>Baziran na JavaScript jeziku i Node.js biblioteci.</li>
+					    <li>Instalira se tako što se <code class="inline">less.js</code> datoteka linkuje u željeni HTML dokument (može i kao deo Node paketa) putem <code class="inline">script</code> taga.</li>
+					    <li>LESS kod se piše u datoteke sa ekstenzijom <code class="inline">.less</code> koje se takođe linkuju u HTML dokument pomoću <code class="inline">link</code> taga.</li>
+					    <li>LESS kod se kompajlira u CSS dinamički prilikom učitavanja stranice.</li>
+					</ul>
+				</section>
+
+				<section data-section="less">
+					<h2 class="dashed">LESS.js</h2>
+					<p>Primer instalacije</p>
+					<pre>
+						<code><link rel="stylesheet/less" type="text/css" href="main.less" /></code>
+					</pre>
+					<pre>
+						<code><script src="js/less.min.js"></script></code>
+					</pre>
+				</section>
+
+				<section data-section="less">
+					<h2 class="dashed">LESS.js</h2>
+					<ul>
+					    <li>Jednostavan za instalaciju i podešavanje.</li>
+					    <li>Nedostaci u odnosu na Sass:
+					    	<ul>
+					    	    <li>Nepostojanje platforme za upravljanje nadogradnjama i distribuciju ekstenzija.</li>
+					    	    <li>Lošija tačnost aritmetičkih operatora.</li>
+					    	    <li>Slabije razvijen mehanizam nasleđivanja selektora.</li>
+					    	</ul>
+					    </li>
+					    <li>Zbog uticaja na vreme učitavanja stranice, upotreba <code class="inline">.less</code> datoteka se ne preporučuje u produkcionim verzijama HTML stranice, već je potrebno uključiti prekompajlirane CSS datoteke.</li>
+					</ul>
+				</section>
+
+				<section data-section="sass">
+					<h2 class="dashed">SASS</h2>
+					<ul>
+					    <li><a href="http://sass-lang.com/">sass-lang.com</a></li>
+					    <li>Syntactically Awesome Stylesheets</li>
+					    <li>Bazira se na Ruby programskom jeziku.</li>
+					    <li>Instalira se putem RubyGems platforme.</li>
+					    <li>Može se koristiti iz komandne linije ili integrisan u postojeće grafičko okruženje za razvoj HTML stranica (najčešći izbor su Codekit ili Komass) ili tekstalni editor.</li>
+					    <li>Sass kod se piše u datotekama sa ekstenzijom <code class="inline">.scss</code> ili <code class="inline">.sasss</code> koje se kompajliraju u CSS na neki od spomenutih načina.</li>
+					</ul>
+				</section>
+
+				<section data-section="sass">
+					<h2 class="dashed">SASS</h2>
+			    	<p>Nakon instaliranja Ruby kompajlera, sass se instalira naredbom:</p>
+	    	    	<pre>
+	    	    		<code class="sh">gem install sass</code>
+	    	    	</pre>
+	    	    	<p>Kompajliranje Sass datoteka iz komandne linije</p>
+	    	    	<p>Ručno:</p>
+	    	    	<pre><code class="sh">sass ulaz.scss izlaz.css</code></pre>
+	    	    	<p>Automatski:</p>
+	    	    	<pre><code class="sh">sass --watch ulaz.scss:izlaz.css</code></pre>
+	    	    	<p>Može i nad celim direktorijumima:</p>
+	    	    	<pre><code class="sh">sass --watch sass:css</code></pre>
+				</section>
+
+				<section>
+					<h2 class="dashed"2><code>sass --watch</code> komanda</h2>
+					<ul>
+					    <li>Automatski prevodi navedenu <code class="inline">.scss</code> datoteku u CSS prilikom svakog snimanja.</li>
+					    <li>Ulazna i izlazna datoteka se navode razdvojene dvotačkom.</li>
+					    <li>Ukoliko se ne navede izlazna CSS datoteka, ona će biti automatski kreirana sa istim imenom kao i u istom direktorijumu i ulazna Sass datoteka.</li>
+					    <li>Sass i CSS datoteke ne moraju da budu istim direktorijumima.</li>
+					    <li>Osim pojedinačnih datoteka, komanda može automatski da kompajlira i cele direktorijume.</li>
+					    <li>PRIMER: <code class="inline example">1. sass_demo</code></li>
+					</ul>
+				</section>
+
+				<section data-section="sass_syntax">
+					<h2 class="dashed">SASS sintakse: Sass</h2>
+					<ul>
+					    <li>Prvobitna Sass sintaksa.</li>
+					    <li>Kreirana po uzoru na Haml jezik.</li>
+					    <li>Ne koristi znakove <code class="inline">{</code>, <code class="inline">}</code> i <code class="inline">;</code> za razdvajanje blokova i pravila, već za to koristi indentaciju.</li>
+					    <li>Zbog ovih razlika u odnosu na čisti CSS, potrebno je neko vreme za učenje i privikavanje na novu sintaksu prilikom prelaska na Sass.</li>
+					    <li>Kod se piše u datotekama sa ekstenzjom <code class="inline">.sass</code>.</li>
+					</ul>
+				</section>
+
+				<section data-section="sass_syntax">
+					<h2 class="dashed">SASS sintakse: Sass</h2>
+					<p>Primer Sass sintakse:</p>
+					<pre><code>
+#main
+  color: blue
+  font-size: 0.3em
+
+  a
+    font:
+      weight: bold
+      family: serif
+
+    &:hover
+      background-color: #eee
+					</code></pre>
+				</section>
+
+				<section>
+					<h2 class="dashed">SASS sintakse: SCSS</h2>
+					<ul>
+					    <li>Sassy CSS</li>
+					    <li>Vrlo slična CSS jeziku, koristi se od Sass vezije 3.</li>
+					    <li>Može se smatrati nadogradnjom CSS jezika.</li>
+					    <li>Kod se piše u datotekama sa <code class="inline">.scss</code> ekstenzijom.</li>
+					    <li>Koristićemo je na ovom kursu.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2 class="dashed">Sass sintakse: Konverzija</h2>
+					<ul>
+					    <li>Ukoliko je potrebno, Sass omogućava konverziju između svojih sintaksi putem <code class="inline">sass-convert</code> komande.</li>
+					    <li>
+					    	Sass –> SCSS
+					    	<pre><code class="sh">sass-convert style.sass style.scss</code></pre>
+					    </li>
+					    <li>
+					    	SCSS –> Sass
+					    	<pre><code class="sh">sass-convert style.scss style.sass</code></pre>
+					    </li>
+					</ul>
+				</section>
+
+				<section>
+					<h2 class="dashed">Sass komentari</h2>
+					<ul>
+					    <li>Osim standardinh CSS komentara podržani su i jednolinijski <i>tihi</i> komentari.</li>
+					    <li><i>Tihi</i> komentari se ne vide u finalnom CSS fajlu.</li>
+					    <pre>
+					    	<code class="scss">
+/*
+Ovo je standardni CSS komentar.
+*/
+// Ovaj komentar se ne vidi u CSS datoteci.
+					    	</code>
+					    </pre>
+					</ul>
+				</section>
+
+				<section data-section="sass_variables">
+					<h2 class="dashed">Sass promenljive</h2>
+					<ul>
+					    <li>Jedan od osnovnih (i najkorisnijih) koncepata koji predprocesori uvode u CSS je mogućnost smeštanja vrednosti u promenljive.</li>
+					    <li>Omogućavaju smeštanje često korištenih CSS vrednosti po uzoru na programske jezike.</li>
+					    <li>Vrlo korisne za definisanje boja ili određenih numeričkih vrednosti koje se koriste na više mesta.</li>
+					    <li>Imena promenljivih u Sass jeziku počinju sa znakom <code class="inline">$</code> i ne smeju sadržavati razmake.</li>
+					    <li>Vrednosti promenljivih se navode razdvojene dvotačkom od  imena.</li>
+					</ul>
+				</section>
+
+				<section data-section="sass_variables">
+					<h2 class="dashed">Sass promenljive</h2>
+					<pre>
+						<code class="scss" data-trim>
+$boja-pozadine: #000;
+$boja-teksta: #fff;
+
+* {
+	background: $boja-pozadine;
+	color: $boja-teksta; 
+}
+						</code>
+					</pre>
+					<ul>
+					    <li>Prilikom kompajliranja, svaka pojava imena promenljive će biti zamenjena njenom vrednošću.</li>
+					    <li>PRIMER: <code class="inline example">2. sass_variables</code></li>
+					</ul>
+				</section>
+
+				<section data-section="nested_selectors">
+					<h2 class="dashed">Ugnježđeni selektori</h2>
+					<ul>
+					    <li>CSS predprocesori omogućavaju pisanje CSS selektora i njihovih pripadajućih pravila unutar drugih selektora.</li>
+					    <li>Ugnježdavanje selektora čini CSS kod lakšim za pisanje jer se izbegavaju suvišna navođenja roditeljskih elemenata u selektorima za svaki pripadajući element.</li>
+					    <li>CSS postaje i lakši za čitanje jer ugnježđena struktura podseća na hijerarhiju HTML dokumenta.</li>
+					</ul>
+				</section>
+
+				<section data-section="nested_selectors">
+					<h2 class="dashed">Ugnježđeni selektori</h2>
+					<p class="left">Umesto da pišemo:</p>
+					<pre>
+						<code class="css">
+nav ul { 
+	/* Pravila za glavnu listu */ 
+}
+nav ul li { 
+	/* Pravila za stavke liste */ 
+}
+nav ul li a { 
+	/* Pravila za linkove u stavkama */ 
+}
+						</code>
+					</pre>
+				</section>
+
+				<section data-section="nested_selectors">
+					<h2 class="dashed">Ugnježđeni selektori</h2>
+					<p class="left">Možemo pisati:</p>
+					<pre>
+						<code class="scss">
+nav  ul {
+	/* Pravila za glavnu listu */
+	li {
+		/*  Pravila za stavke liste */
+		a {
+			/* Pravila za linkove u stavkama */
+		}
+	}
+}
+						</code>
+					</pre>
+					<p class="left">PRIMER: <code class="inline example">3. sass_nesting_selectors</code></p>
+				</section>
+
+				<section data-section="nested_selectors">
+					<h2 class="dashed">Ugnježđeni selektori</h2>
+					<p>ZADATAK:</p>
+					<p>Primer <code class="inline">z1-nesting_selectors</code> izmeniti tako da se koriste Sass ugnježđeni selektori i promenljive. Primer prevesti u CSS i prikazati rezultat u browseru.</p>
+				</section>				
+
+				<section data-section="nested_selectors">
+					<h2 class="dashed">Ugnježđeni selektori</h2>
+					<ul>
+					    <li>Obratiti pažnju da mi nemamo kontrolu nad generisanim CSS kodom, tako da nekada upotreba ugnježđenih selektora može rezultovati CSS selektorima vrlo velike specifičnosti, što može uticati na njigov opseg i otežati izmene određenih pravila.</li>
+					    <li>Međutim, uz malo planiranja i sticanjem više iskustva, ovakve situacije se lako mogu izbeći.</li>
+					</ul>
+				</section>
+
+				<section data-section="nested_selectors">
+					<h2 class="dashed">Ugnježđeni selektori</h2>
+					<ul>
+					    <li>Drugi problem koji se javlja prilikom prevelike upotrebe ugnježđenih selektora je povećanje zavisnosti CSS stilova od DOM strukure HTML dokumenta.</li>
+					    <li>Prilikom promene stukture HTML dokumenta, potrebno je menjati Sass kod.</li>
+					    <li>Kako bi se izbegao ovaj problem, neki autori smatraju da Sass kod ne bi trebalo ugnježdavati preko 4. nivoa.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2 class="dashed">Referenca na roditeljski selektor</h2>
+					<p class="left">Znak <code class="inline">&</code></p>
+					<pre>
+						<code class="scss">
+a {
+	color: #f00;
+	
+	&:hover {
+		color: #00f;
+	}
+}
+						</code>
+					</pre>
+					<p class="left">Svaka pojava znaka <code class="inline">&</code> biće zamenjena selekrom koji je direktan roditelj pravila u kojem je znak naveden (u ovom slučaju <code class="inline">a</code>).</p>
+				</section>
+
+				<section data-section="inheritance">
+					<h2 class="dashed">Nasleđivanje selektora</h2>
+					<ul>
+					    <li>Implementirano po uzoru na nasleđivanje iz OOP.</li>
+					    <li>Još jedna mera smanjenja redundantnosti CSS koda.</li>
+					    <li>Selektor koji nasleđuje drugi selektor nasleđuje sva pravila iz slelektora koji nasleđuje.</li>
+					    <li>Pored nasleđenih pravila, selektor može da uvodi svoja specifična pravila.</li>
+					</ul>
+				</section>
+
+				<section data-section="inheritance">
+					<h2 class="dashed">Nasleđivanje selektora</h2>
+					<ul>
+					    <li>Deklariše se anotacijom <code class="scss inline">@extend</code> nakon koje se navodi selektor koji se nasleđuje.</li>
+					</ul>
+					<pre>
+						<code class="scss">
+.red-link {
+	@extend .link;
+	color: #f00;
+}
+						</code>
+					</pre>
+					<ul>
+					    <li>Pod uslovom da klasa <code class="css inline">.link</code> postoji, klasa <code class="css inline">.red-link</code> će naslediti sva njena CSS pravila i dodati svoje pravilo za boju teksta.</li>
+					    <li>PRIMER: <code class="inline example">4. extend</code></li>
+					</ul>
+				</section>
+
+				<section data-section="inheritance">
+					<h2 class="dashed">Nasleđivanje selektora</h2>
+					<ul>
+					    <li>Selektor koji se nasleđuje mora postojati, inače Sass kompajler javlja grešku.</li>
+					    <li>Nasleđena pravila neće biti samo ubačena na mesto <code class="inline">@extend</code> direktive, već će biti izgenerisano zajedničko pravilo za nasleđeni selekor i selektor koji nasleđuje.</li>
+					    <li>Nasleđivanje ne radi u kombinaciji sa media-query mehanizmom.</li>
+					</ul>
+				</section>
+
+				<section data-section="mixins">
+					<h2 class="dashed">Mixini</h2>
+					<ul>
+					    <li>Omogućavaju definisanje imenovanih blokova CSS pravila koji se mogu koristiti na više mesta.</li>
+					    <li>Definišu se direktivom <code class="inline">@mixin</code></li>
+					    <pre><code class="scss">
+@mixin moj-prvi-mixin {
+	...
+}
+			    		</code></pre>
+					    <li>Kreirani mixin se uključuje u neko pravilo direktivom <code class="inline">@include</code> nakon koje se navodi ime mixina.</li>
+					    <li>U generisanom CSS kodu će na mestu svake od <code class="inline">@include</code> direktiva biti ubačen kod iz mixina sa tim imenom.</li>
+					</ul>
+				</section>
+
+				<section data-section="mixins">
+					<h2 class="dashed">Mixini</h2>
+					<ul>
+					    <li>Mixini mogu da sadrže kompletne CSS blokove uključujući selektore i pripadajuća pravila ili samo skup pravila.</li>
+					    <li>Ukoliko mixin predstavlja skup CSS blokova, on može biti uključen izvan CSS bloka.</li>
+					    <li>Mixini mogu da uključuju druge mixine.</li>
+					    <li>PRIMER: <code class="inline example">5. mixins</code></li>
+					</ul>
+				</section>
+
+				<section data-section="mixins">
+					<h2 class="dashed">Mixini</h2>
+					<ul>
+					    <li>Mixini mogu da imaju proizvoljan broj ulaznih parametara koji su kao lokalne promenljive dostupni u telu mixina.</li>
+					    <li>Parametri se navode nakon imena mixina u zagradi, razdvojeni zarezom.</li>
+					    <li>Parametri mogu imati i podrazumevane (default) vrednosti.</li>
+				    	<pre>
+				    		<code class="scss">
+@mixin moj-mixin($param1: vrednost1, $param2: vrednost2) {
+	…
+}
+				    		</code>
+				    	</pre>
+					</ul>
+					<p class="left">PRIMER: <code class="inline example">6. mixins_arguments</code></p>
+				</section>
+
+				<section data-section="mixins">
+					<h2 class="dashed">Mixini</h2>
+					<ul>
+					    <li>Mixini predstavljaju vrlo feksibilno i elegentno rešenje za kreiranje ponovo upotrebljivog koda (DRY pravilo).</li>
+					    <li>Zbog toga što predstavljaju potpunije rešenje od nasljeđivanja selektora, mnogi autori predlažu korištenje mixina potpuno umesto nasleđivanja.</li>
+					    <li>Vrlo su korisni za vendor-prefixed pravila.</li>
+					    <li>Danas se na internetu može naći veliki broj gotovih mixina koji rešavaju mnoge praktične CSS probleme.</li>
+					</ul>
+				</section>
+
+				<section data-section="numeric_operators">
+					<h2 class="dashed">Numerički operatori</h2>
+					<ul>
+					    <li>Sass omogućava upotrebu osnovnih matematičkih operatora u svojim pravilima.</li>
+					    <li>Podržane operacije: <code class="inline">+</code>, <code class="inline">-</code>, <code class="inline">*</code>, <code class="inline">/</code>, <code class="inline">%</code></li>
+					    <li>Operacije se mogu vršiti nad konkretnim vrednostima I nad promenljivama.</li>
+					    <li>U kombinaciji sa promeljivama, operatori predstavljaju vrlo korisno proširenje CSS-a.</li>
+					</ul>
+				</section>
+
+				<section data-section="numeric_operators">
+					<h2 class="dashed">Numerički operatori</h2>
+					<p class="left">Ograničenja:</p>
+					<ul>
+					    <li>Prioriteti operatora su isti kao u osnovnoj aritmetici.</li>
+					    <li>U izrazima je moguće koristiti samo komaptibilne jedinice (<code class="inline">px</code> i <code class="inline">in</code> su kompatibilni, ali <code class="inline">px</code> i <code class="inline">em</code> nisu).</li>
+					    <li>Množenjem dva broja istih jedinica dobija se rezultat u kvadratnim jedinicama (<code class="inline">10px * 10px = 100px * px</code>), pa se u ovim slučajevima preporučuje izostavljanje jedinice kod drugog operanda.</li>
+					</ul>
+					<p class="left">PRIMER: <code class="inline example">7. operations_grid</code></p>
+				</section>
+
+				<section data-section="numeric_operators_division">
+					<h2 class="dashed">Numerički operatori: Delenje</h2>
+					<p class="left">Problem:</p>
+					<ul>
+					    <li>Znak <code class="inline">/</code> se u CSS koristi za kraći zapis nekih pravila (pravilo <code class="css inline">font: 12px / 18px;</code> postavlja <code class="inline">font-size</code> na 12px i <code class="inline">line-height</code> na 18px).</li>
+					    <li>Isti znak se u Sass koristi za delenje</li>
+					    <li>S obzirom da je Sass proširenje CSS sintakse, CSS interpretacija mora biti ispoštovana.</li>
+					</ul>
+				</section>
+
+				<section data-section="numeric_operators_division">
+					<h2 class="dashed">Numerički operatori: Delenje</h2>
+					<p class="left">Znak <code class="inline">/</code> će biti iskorišćen za delenje u sledećim slučajevima:</p>
+					<ul>
+					    <li>Ako su operandi smešteni u promeljive ili predstavljaju povratne vrednosti funkcija,</li>
+					    <li>Ako izraz zaokružimo običnim zagradama,</li>
+					    <li>Ako se izraz koristi kao deo nekog drugog aritmetičkog izraza.</li>
+					</ul>
+					<p class="left">U svim ostalim slučajevima će izrazi koji sadrže <code class="inline">/</code> biti direktno preneseni u CSS.</p>
+				</section>
+
+				<section data-section="numeric_operators_division">
+					<h2 class="dashed">Numerički operatori: Delenje</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Izraz</td>
+								<th>Interpretacija</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><code class="inline">font: 10px/8px;</code></td>
+								<td>CSS izraz, bez delenja</td>
+							</tr>
+							<tr>
+								<td><code class="inline">width: $width/2;</code></td>
+								<td>Izraz sadrži promenljivu, delenje</td>
+							</tr>
+							<tr>
+								<td><code class="inline">width: round(1.5) / 2;</code></td>
+								<td>Izraz sadrži funkciju, delenje</td>
+							</tr>
+							<tr>
+								<td><code class="inline">height: (500px/2);</code></td>
+								<td>Izraz je u zagradama, delenje</td>
+							</tr>
+							<tr>
+								<td><code class="inline">margin: 5px + 8px/2px;</code></td>
+								<td>Deo drugog aritmetičkog izraza, delenje</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+					<h2 class="dashed">Numerički operatori: Oduzimanje</h2>
+					<ul>
+					    <li>Slično ako <code class="inline">/</code>, i operator <code class="inline">-</code> može imati različita značenja u CSS-u i Sass-u (operator oduzimanja, negativan predznak, unarni operator negacije).</li>
+					    <li>Kako bi se izbegla pogrešna tumačenja, preporučuje se poštovanje sledećih smernica:
+					    	<ul>
+					    	    <li>Prilikom pisanja izraza oduzimanja, staviti razmak ispred i iza znaka <code class="inline">-</code>(<code class="inline">$a - $b</code>).</li>
+					    	    <li>Prilikom pisanja negativnih brojeva ili unarne negacije, staviti razmak ispred ali ne i iza znaka <code class="inline">-</code>(<code class="inline"> -54</code>).</li>
+					    	</ul>
+					    </li>
+					</ul>
+				</section>
+
+				<section>
+					<h2 class="dashed">Numerički operatori: Boje</h2>
+					<ul>
+					    <li>Sass omogućava izvođenje aritmetičkih operacija nad bojama.</li>
+					    <li>Operator se primenjuje na svaku komponentu posebno (crvena, zelena i plava).</li>
+					    <li>U operacijama je moguće kombinovati boje (podržani su svi validni CSS zapisi) I brojeve.</li>
+					    <li>Međutim, za manipulaciju nad bojama, preporučuje se upotreba ugrađenih Sass funcija.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2 class="dashed">Operatori jednakosti</h2>
+					<ul>
+					    <li>Proveravaju da li su dve vrednosti jednake.</li>
+					    <li>Vraćaju logičku vrednost <code class="inline">true</code> ili <code class="inline">false</code>.</li>
+					    <li>Podržani operatori:
+					    	<ul>
+					    	    <li><code class="inline">==</code> - Vraća <code class="inline">true</code> ako su operandi jednaki</li>
+					    	    <li><code class="inline">!=</code> - Vraća <code class="inline">true</code> ako operandi nisu jednaki</li>
+					    	</ul>
+					    </li>
+					    <li>Koriste se u logičkim izrazima.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2 class="dashed">Operatori poređenja i logički operatori</h2>
+					<ul>
+					    <li>Sass podržava standardne operatore poređenja i osnovne logičke operatore.</li>
+					    <li>Podržani operatori poređenja:
+					    	<ul>
+					    	    <li>
+					    	    	<code class="inline">&gt;</code>, <code class="inline">&lt;</code>, <code class="inline">&gt;=</code>, <code class="inline">&lt;=</code>
+					    	    </li>
+					    	</ul>
+					    </li>
+					    <li>Podržani logicki operatori:
+					    	<ul>
+					    	    <li>
+					    	    	<code class="inline">and</code>, <code class="inline">or</code>, <code class="inline">not</code>
+					    	    </li>
+					    	</ul>
+					    </li>
+					</ul>
+				</section>
+
+				<section>
+					<h2 class="dashed">Kontrola toka</h1>
+					<ul>
+					    <li>Sass (kao i svi ostali CSS predprocesori) uvodi mogućnost kontrole toka izvršavanja koda putem kontrolnih struktura i petlji.</li>
+					    <li>Podržana je kontrolna struktura <code class="inline">if-else</code>.</li>
+					    <li>Od petlji postoje <code class="inline">for</code>, <code class="inline">each</code> i <code class="inline">while</code>.</li>
+					    <li>Ove strukture predstavljaju vrlo korisno proširenje, pogotovo u kombinaciji sa predstavljenim mehanizmima.</li>
+					</ul>
+				</section>
+
+				<section data-section="if_else">
+					<h2 class="dashed"><code class="inline">if-else</code></h2>
+					<ul>
+					    <li>Kreirana po uzoru na <code class="inline">if-else</code> direktive iz programskih jezika.</li>
+					    <li>Služi za primenu CSS stila u zavisnosti od logičkog uslova.</li>
+					    <li>Može da ima proizvoljan broj grananja.</li>
+					    <li>Izraz u uslovu se smatra tačnim ukoliko vraća vrednost koja nije <code class="inline">false</code> ili <code class="inline">null</code>.</li>
+					</ul>
+				</section>
+
+				<section data-section="if_else">
+					<h2 class="dashed"><code class="inline">if-else</code></h2>
+					<pre>
+						<code class="scss">
+$size: small;
+p {
+	@if $size == small { font-size: 10px; }
+	@else if $size == large { font-size: 16px; }
+	@else if $size == xlarge { font-size: 26px; }
+	@else { font-size: 12px; }
+}
+						</code>
+					</pre>
+					<p class="left">PRIMER: <code class="inline example">8. if-else</code></p>
+				</section>
+
+				<section data-section="for">
+					<h2 class="dashed"><code class="inline">for</code> petlja</h2>
+					<p class="left no-gap">Služi za iterativno generisanje CSS pravila.</p>
+					<pre>
+						<code class="scss">
+@for $var from &lt;start&gt; through &lt;end&gt; { 
+	/* . . . */  
+}
+@for $var from &lt;start&gt; to &lt;end&gt; { 
+	/* . . . */
+}
+						</code>
+					</pre>
+					<p class="left">
+						<code class="inline">$var</code> – ime lokalne promenljive koja se menja u svakoj iteraciji
+					</p>
+					<p class="left">
+						<code class="inline">start</code> i <code class="inline">end</code> – bilo koji Sass izraz koji vraća  celobrojnu vrednost.
+					</p>
+					<p class="left">
+						Varijanta sa <code class="inline">through</code> uzima u obzir i <code class="inline">end</code> vrednost dok varijanta sa <code class="inline">to</code> ne uzima.
+					</p>
+				</section>
+
+				<section data-section="for">
+					<h2 class="dashed"><code class="inline">for</code> petlja</h2>
+					<pre>
+						<code class="scss">
+@for $i from 1 trough 3 {
+    .item-#{$i} { width: 2em * $i; }
+}
+						</code>
+					</pre>
+					<p class="left no-gap">Rezultat:</p>
+					<pre>
+						<code class="css">
+.item-1 { width: 2em; }
+.item-2 { width: 4em; }
+.item-3 { width: 6em; }
+						</code>
+					</pre>
+					<p class="left no-gap">PRIMER: <code class="inline">9. for</code></p>
+				</section>
+
+				<section>
+					<h2 class="dashed">Ugrađene funkcije</h2>
+					<ul>
+					    <li>Pored definisanja korisničkih funkcija, Sass poseduje veliki broj ugrađenih funkcija.</li>
+					    <li>PRIMER: <code class="inline">10. Built-in funcions</code></li>
+					    <li>Ceo spisak sa dokumentacijom se može naći <a href="http://sass-lang.com/documentation/Sass/Script/Functions.html">ovde</a>.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2 class="dashed">Lektira</h1>
+					<ul class="litList">
+						<li class="litItem">
+							<span class="litSubtitle">Dale Sande, Kianosh Pourian, Jed Foster</span><br>
+							<span class="litTitle">Sass in the Real World [1-4]</span>
+						</li>
+						<li class="litItem">
+							<span class="litSubtitle">Dan Cederholm</span><br>
+							<span class="litTitle">Sass for Web Designers</span>
+						</li>
+					</ul>
+				</section>
+<!-- *************************************************************** SLIDES END HERE *********************************************************************************************** -->
+			</div>
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="js/maroon.js"></script>
+	</body>
+</html>

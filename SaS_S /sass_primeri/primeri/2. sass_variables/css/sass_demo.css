@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: #193441;
+  font-family: Helvetica, Arial, sans-serif; }
+
+.mainContainer {
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 2em;
+  background: #3e606f;
+  color: #d1dbbd;
+  text-align: center; }
+
+/*# sourceMappingURL=sass_demo.css.map */

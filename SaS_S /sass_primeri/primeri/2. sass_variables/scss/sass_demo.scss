@@ -1,0 +1,28 @@
+$bodyBackground:		#193441;
+$containerBackground:	#3e606f;
+$mainTextColor:  		#d1dbbd;
+$centerMargin:			0 auto;
+$containerPadding:		2em;
+$mainSansFont:			Helvetica, Arial, sans-serif;
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: $bodyBackground;
+	font-family: $mainSansFont;
+}
+
+.mainContainer {
+	width: 70%;
+	height: 100%;
+	margin: $centerMargin;
+	padding: $containerPadding;
+	background: $containerBackground;
+	color: $mainTextColor;
+	text-align: center;
+}

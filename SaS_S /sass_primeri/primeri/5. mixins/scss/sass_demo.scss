@@ -1,0 +1,44 @@
+$bodyBackground:		#193441;
+$containerBackground:	#3e606f;
+$mainTextColor:  		#d1dbbd;
+$orangeTextColor:		#fecb92;
+$centerMargin:			0 auto;
+$containerPadding:		2em;
+$mainSansFont:			Helvetica, Arial, sans-serif;
+
+
+@mixin quoted-text {
+	padding: 1em;
+	font-style: italic;
+	color: $orangeTextColor;
+	font-size: 0.9em;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background:  $bodyBackground;
+	font-family: $mainSansFont;
+	color: 		 $mainTextColor;
+
+	.mainContainer {
+		width: 70%;
+		height: 90%;
+		margin: $centerMargin;
+		padding: $containerPadding;
+		background: $containerBackground;
+		text-align: justify;
+	}
+
+	h1 {
+		margin-bottom: 2em;
+	}
+
+	p.quote {
+		@include quoted-text;
+	}
+}

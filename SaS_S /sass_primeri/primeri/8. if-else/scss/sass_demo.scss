@@ -1,0 +1,63 @@
+$bodyBackground:		#193441;
+$containerBackground:	#3e606f;
+$mainTextColor:  		#d1dbbd;
+$orangeTextColor:		#fecb92;
+$centerMargin:			0 auto;
+$containerPadding:		2em;
+$mainSansFont:			Helvetica, Arial, sans-serif;
+$mainContainerWidth:	900px;
+
+@mixin set-weight($weight) {
+	@if $weight == bold { font-weight: bold; }
+	@else if $weight == light { font-weight: 100; }
+	@else if $weight == heavy { font-weight: 900; }
+	@else { font-weight: normal; }
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background:  $bodyBackground;
+	font-family: $mainSansFont;
+	color: 		 $mainTextColor;
+
+	.mainContainer {
+		width: $mainContainerWidth;
+		height: 100%;
+		margin: $centerMargin;
+		background: $containerBackground;
+		text-align: justify;
+		padding: $containerPadding;
+	}
+
+	h1 {
+		margin-bottom: 0.2em;
+	}
+
+	h2 {
+		color: $orangeTextColor;
+		font-size: 1.2em;
+		margin-bottom: 3em;
+	}
+
+	p.bold {
+		@include set-weight(bold);
+	}
+
+	p.light {
+		@include set-weight(light);
+	}
+	
+	p.heavy {
+		@include set-weight(heavy);
+	}
+	
+	p.normal {
+		@include set-weight(normal);
+	}
+
+}

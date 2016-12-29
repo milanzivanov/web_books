@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans Condensed', sans-serif;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  background: url(../slike/city.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%; }
+
+body {
+  height: 100%;
+  overflow: hidden; }
+  body nav {
+    width: 10%;
+    height: 100%;
+    background-color: rgba(255, 102, 72, 0.8);
+    float: left; }
+    body nav #mainNavList {
+      list-style: none; }
+      body nav #mainNavList li {
+        width: 100%;
+        height: 10%;
+        padding: 5%;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+        font-size: 20px;
+        border-bottom: 1px solid white;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none; }
+        body nav #mainNavList li:hover {
+          background-color: rgba(255, 255, 255, 0.8);
+          color: black; }
+
+#content {
+  width: 90%;
+  height: 100%;
+  float: right;
+  padding: 0 3%;
+  overflow: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; }
+  #content h1 {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    float: left;
+    clear: both;
+    padding: .3em;
+    margin-top: .5em;
+    font-size: 2.5em; }
+  #content h2 {
+    color: #000;
+    background-color: rgba(255, 102, 72, 0.8);
+    float: left;
+    clear: both;
+    margin-top: .1em;
+    padding: .1em .3em;
+    font-size: 1.5em; }
+  #content .picturesContainer {
+    width: 100%;
+    float: left;
+    clear: both; }
+  #content .previewDiv {
+    width: 12%;
+    height: 10vw;
+    background: black;
+    border-radius: 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: 0.7;
+    margin: 2%;
+    display: inline-block;
+    cursor: pointer; }
+    #content .previewDiv:hover {
+      opacity: 1; }
+  #content .textContent {
+    width: 100%;
+    float: left;
+    text-align: justify;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3); }
+  #content .buttonContainer {
+    width: 100%;
+    float: left;
+    padding: .5em; }
+    #content .buttonContainer .commonButton {
+      border: none;
+      font-size: 1.3em;
+      padding: .2em .1em;
+      cursor: pointer;
+      float: right;
+      margin: 0 .2em; }
+      #content .buttonContainer .commonButton .whiteButton {
+        color: black;
+        background: white; }
+      #content .buttonContainer .commonButton .blackButton {
+        color: white;
+        background: black; }
+  #content .previewDiv#pic1 {
+    background-image: url("../slike/thumbs/1.jpg"); }
+  #content .previewDiv#pic2 {
+    background-image: url("../slike/thumbs/2.jpg"); }
+  #content .previewDiv#pic3 {
+    background-image: url("../slike/thumbs/3.jpg"); }
+  #content .previewDiv#pic4 {
+    background-image: url("../slike/thumbs/4.jpg"); }
+  #content .previewDiv#pic5 {
+    background-image: url("../slike/thumbs/5.jpg"); }
+  #content .previewDiv#pic6 {
+    background-image: url("../slike/thumbs/6.jpg"); }
+
+/*# sourceMappingURL=photos.css.map */

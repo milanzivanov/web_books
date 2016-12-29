@@ -1,0 +1,42 @@
+SASS zadaci
+---------------------------------------
+
+1.	U zadatku z2-alternate-rows pomoću Sass for petlje kreirati CSS pravila na osnovu kojih će pozadina neparnih redova u tabeli biti boje #193441
+2.	for petlju u zadatku 'z2-alternate-rows' proširiti tako da u neparnim redovima u tabeli pozadina bude bele boje a tekst crne.
+3.	CSS kod za providnost koji radi u svim browserima izgleda ovako:
+	
+	#neki_element {
+		-moz-opacity: 0.5;
+		-khtml-opacity: 0.5;
+		opacity: 0.5;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+		filter: alpha(opacity=50);
+	}
+	
+	Kreirati mixin koji kao parametar prima vrednost za providnost (0 - 1) i postavlja sva ova pravila na odgovarajuću vrednost.
+
+4.	Kreirati mixin koji će omogućiti primenu sledećeg clearfix pravila u jednoj liniji Sass koda:
+
+	#neki_element:before, #neki_element:after {
+        content: "";
+        display: table;
+    }
+    #neki_element:after {
+        clear: both;
+    }
+
+    NAPOMENA: Mixin implementirati uz oslonac na referencu na roditeljski element.
+
+5.  Kreirati mixin koji za zadane veličine u pikselima računa procentualnu vrednost ciljane veličine.
+	Mixin treba da prima 2 parametra: target i context, a procenat se računa prema sledećoj formuli:
+
+		(target / context) * 100
+
+6. 	HTML primer 'z3-my-photos' prevesti tako da se umesto CSS-a koristi SASS.
+	Implementirati minimalno sledeće izmene:
+	-	Sve boje smestiti u sass promenljive.
+	-	Kreirati mixine koji će omogućiti primenu CSS pravila specifičnih za browsere u jednoj liniji.
+	-	Ugnezditi hijerarhijski organizovane selektore.
+	-	Kreirati posebnu CSS klasu koja će sadržavati sva zajednička pravila iz klasa .whiteButton i .blackButton.
+	-	Klase .whiteButton i .blackButton izmeniti tako da nasleđuju novu klasu.
+	-	Implementirati generisanje CSS koda za elemente #pic1 - #pic6 uz pomoć Sass petlje.

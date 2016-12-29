@@ -1,0 +1,50 @@
+$bodyBackground:		#193441;
+$containerBackground:	#3e606f;
+$mainTextColor:  		#d1dbbd;
+$orangeTextColor:		#fecb92;
+$centerMargin:			0 auto;
+$containerPadding:		2em;
+$mainSansFont:			Helvetica, Arial, sans-serif;
+$mainContainerWidth:	900px;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background:  $bodyBackground;
+	font-family: $mainSansFont;
+	color: 		 $mainTextColor;
+}
+
+h1 { margin-bottom: 0.2em; }
+h2 {
+	color: $orangeTextColor;
+	font-size: 1.2em;
+	margin-bottom: 3em;
+}
+
+.mainContainer {
+	width: $mainContainerWidth;
+	height: 100%;
+	margin: $centerMargin;
+	background: $containerBackground;
+	text-align: justify;
+	padding: $containerPadding;
+
+	div {
+		width: 150px;
+		height: 150px;
+		float: left;
+		margin-right: 50px;
+		background-size: cover;
+	}
+
+	@for $i from 1 through 4 {
+		.image#{$i} {
+			background-image: url('../slike/s' + $i + '.png');
+		}
+	}
+}

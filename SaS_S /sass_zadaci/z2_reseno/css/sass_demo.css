@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: #193441;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #d1dbbd; }
+  body .mainContainer {
+    width: 900px;
+    height: 100%;
+    margin: 0 auto;
+    background: #3e606f;
+    text-align: justify;
+    padding: 2em; }
+  body h1 {
+    margin-bottom: 0.2em; }
+  body h2 {
+    color: #fecb92;
+    font-size: 1.2em;
+    margin-bottom: 3em; }
+  body table {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center; }
+    body table thead {
+      background: #000; }
+    body table th, body table td {
+      border: 1px solid #d1dbbd; }
+    body table .row1 {
+      background: #fff;
+      color: #000; }
+    body table .row2 {
+      background: #193441; }
+    body table .row3 {
+      background: #fff;
+      color: #000; }
+    body table .row4 {
+      background: #193441; }
+    body table .row5 {
+      background: #fff;
+      color: #000; }
+    body table .row6 {
+      background: #193441; }
+    body table .row7 {
+      background: #fff;
+      color: #000; }
+    body table .row8 {
+      background: #193441; }
+    body table .row9 {
+      background: #fff;
+      color: #000; }
+
+/*# sourceMappingURL=sass_demo.css.map */
